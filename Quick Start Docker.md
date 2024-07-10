@@ -10,6 +10,11 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/1.13.5/install
 sudo apt-get install -y nvidia-container-toolkit-base || yay -Syu nvidia-container-toolkit || echo etc...
 ```
 
+### 2.1. Install cuda 12.5 inside dockerfile
+```
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_network
+```
+
 ### 3. First build the docker image
 ```docker build --tag "voicecraft" .```
 
