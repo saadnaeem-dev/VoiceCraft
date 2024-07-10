@@ -14,14 +14,14 @@ RUN conda update -y -n base -c conda-forge conda && \
     conda run -n voicecraft mfa model download dictionary english_us_arpa && \
     conda run -n voicecraft mfa model download acoustic english_us_arpa && \
     conda run -n voicecraft pip install -e git+https://github.com/facebookresearch/audiocraft.git@c5157b5bf14bf83449c17ea1eeb66c19fb4bc7f0#egg=audiocraft && \
-    conda run -n voicecraft pip install xformers==0.0.22 && \
     conda run -n voicecraft pip install torch==2.0.1 && \
     conda run -n voicecraft pip install torchaudio==2.0.2 && \
     conda run -n voicecraft pip install tensorboard==2.16.2 && \
     conda run -n voicecraft pip install phonemizer==3.2.1 && \
     conda run -n voicecraft pip install datasets==2.16.0 && \
     conda run -n voicecraft pip install torchmetrics==0.11.1 && \
-    conda run -n voicecraft pip install huggingface_hub==0.22.2
+    conda run -n voicecraft pip install huggingface_hub==0.22.2 && \
+    conda run -n voicecraft pip install xformers; platform_system != "Ubuntu"
     
 
 # Install the Jupyter kernel

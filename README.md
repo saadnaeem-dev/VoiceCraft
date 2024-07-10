@@ -97,8 +97,8 @@ echo GOOD LUCK
 
 ## Environment setup
 ```bash
-conda create -n voicecraft python=3.9.16
-conda activate voicecraft
+conda create -n wsl-voice-craft python=3.9.16
+conda activate wsl-voice-craft
 
 pip install -e git+https://github.com/facebookresearch/audiocraft.git@c5157b5bf14bf83449c17ea1eeb66c19fb4bc7f0#egg=audiocraft
 pip install xformers==0.0.22
@@ -120,6 +120,9 @@ mfa model download acoustic english_us_arpa
 
 # to run ipynb
 conda install -n voicecraft ipykernel --no-deps --force-reinstall
+```
+```
+conda activate wsl-voice-craft
 ```
 
 If you have encountered version issues when running things, checkout [environment.yml](./environment.yml) for exact matching.

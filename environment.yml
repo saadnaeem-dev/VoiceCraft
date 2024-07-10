@@ -1,4 +1,5 @@
-name: voicecraft
+# conda env create -f environment.yml
+name: wsl-voice-craft
 channels:
   - conda-forge
   - defaults
@@ -415,3 +416,5 @@ dependencies:
       - yarg==0.1.9
       - yarl==1.9.4
 prefix: /home/pyp/miniconda3/envs/voicecraft
+
+# python -m ipykernel install --user --name wsl-voice-craft
