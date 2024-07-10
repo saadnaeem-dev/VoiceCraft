@@ -59,10 +59,8 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install CUDA
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
-RUN dpkg -i cuda-keyring_1.1-1_all.deb
-RUN apt-get update
-RUN apt-get -y install cuda-toolkit-12-5
+RUN wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda_11.0.2_450.51.05_linux.run
+RUN sh cuda_11.0.2_450.51.05_linux.run
 
 # Update Conda, create the voicecraft environment, and install dependencies
 RUN conda update -y -n base -c conda-forge conda
@@ -86,7 +84,7 @@ RUN conda install -n voicecraft ipykernel --update-deps --force-reinstall -y && 
 
 # Set NVIDIA environment variables
 ENV PATH /usr/local/cuda/bin:${PATH}
-ENV LD_LIBRARY_PATH /opt/conda/envs/voicecraft/lib/python3.9/site-packages/nvidia/cuda_runtime/lib/libcudart.so.12
+ENV LD_LIBRARY_PATH /opt/conda/envs/voicecraft/lib/python3.9/site-packages/nvidia/cuda_runtime/lib/libcudart.so.11.0
 
 # Enable NVIDIA runtime
 LABEL com.nvidia.volumes.needed="nvidia_driver"
